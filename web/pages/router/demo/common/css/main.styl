@@ -1,0 +1,39 @@
+flexC()
+  display flex
+  justify-content center
+  align-items center
+  
+transX(name = translateX, start, end)
+  @keyframes name {
+    from {
+      transform translateX(start)
+    }
+    to {
+      transform translateX(end)
+    }
+  }
+
+fade(name = fade, start = 0, end = 1)
+	@keyframes name {
+		from {
+			opacity start
+		}
+		to {
+			opacity end
+		}
+	}
+fadeup(name = fadeup, start = 0, end = 1, y0 = 10px, y1 = 0)
+	@keyframes name {
+		from {
+			opacity start
+			transform translateY(y0)
+		}
+		to {
+			opacity end
+			transform translateY(y1)
+		}
+	}
+fadeup()
+fadein(duration = 0.5s, delay = 0.5s, options)
+	animation fadeup duration linear delay options
+
