@@ -52,7 +52,7 @@ export default {
     },
   },
   mounted() {
-    // this.createCountup()
+    this.createCountup()
   },
   methods: {
     createCountup() {

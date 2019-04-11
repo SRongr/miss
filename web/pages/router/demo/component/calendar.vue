@@ -1,6 +1,6 @@
 <template lang="pug">
   .wrapper
-    .describe(v-if='showDescribe') {{calendarText[calendarTextIndex]}}
+    .describe(v-if="ani") {{calendarText[calendarTextIndex]}}
     .year {{year}} 年
     .calendar-wrapper
       .paper
@@ -27,11 +27,22 @@ export default {
   components: {
     CountUp
   },
-  props: ['goOn'],
+  props: ['goOn', 'ani'],
+  computed: {
+    // describe () {
+    //   if (Array.isArray(this.calendarText[this.calendarTextIndex])) {
+
+    //   } else {
+    //     return this.calendarText[this.calendarTextIndex]
+    //   }
+    // }
+  },
   data() {
     return {
       calendarText: [
         '这是你不知道的一年',
+        `我们跳过这一年, 从第二次加你开始
+        时间滚动`,
         '直到失去了, 才发现有很多该珍惜的没有珍惜',
         '现在, 我想捡起仅剩不多的记忆碎片',
         '那么, 欢迎来到时光日历'
@@ -51,23 +62,47 @@ export default {
       year: 2017,   // 开始年
       showCountup: false,
       startValue: 1,
-      showDescribe: false
+      init: true
+      // showDescribe: false
     }
   },
   watch: {
-    goOn(boolean) {
+    // goOn(boolean) {
+    //   console.log(boolean)
+    //   if (boolean) {
+    //     this.startValue = this.targetDay
+    //     this.getTargetDay()
+    //   }
+    // },
+    ani(boolean) {
       console.log(boolean)
       if (boolean) {
-        this.startValue = this.targetDay
-        this.getTargetDay()
+        if (this.init) {
+          const timer = setTimeout(() => {
+            this.$emit('slideTo', 2)
+            this.init = false
+            clearTimeout(timer)
+          }, 3000)
+        } else {
+          if (this.index === 0) {
+            setTimeout(() => {
+              this.year = 2018
+              this.showCountup = true
+              this.getTargetDay()  
+            }, 5000)
+          }
+        }
+      } else {
+        this.calendarTextIndex ++
       }
     }
   },
   mounted () {
+    // console.log('mounted')
     this.showDescribe = true
-    setTimeout(() => {
-      this.$emit('slideTo', 1)
-    }, 3000)
+    // setTimeout(() => {
+    //   this.$emit('slideTo', 2)
+    // }, 3000)
     // setTimeout(() => {
     //   this.calendarTextStart()
     // }, 1000)

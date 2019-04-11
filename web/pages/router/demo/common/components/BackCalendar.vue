@@ -1,8 +1,6 @@
 <template lang="pug">
   .wrapper(@click="backClick")
-    .img
-      .left
-      .body
+    img.img(src="../../img/arrow.png")
     .text 回到日历
 
 </template>
@@ -30,32 +28,20 @@ export default {
     position absolute 
     bottom rem(20)
     left rem(20)
-    height rem(30)
-    width rem(300)
+    height rem(50)
+    width rem(200)
     background-color transparentify
     flexC()
     justify-content space-between
     transX(backX, 0%, -10%)
     animation backX linear 1s alternate infinite
-    opacity .4
+    opacity .5
+    z-index 1
     .img
-      position relative
-      display flex
-      flexC()
-      .left
-        width rem(0)
-        height rem(0)
-        float left 
-        // background-color transparentify
-        border rem(20) solid 
-        border-right-color red
-      .body
-        float left
-        width rem(100)
-        height rem(20)
-        background-color red
+      transform rotate(270deg)
+      width rem(50)
     .text
-      color red
+      color #ffffff
       font-size rem(30)
       font-weight 500
 </style>

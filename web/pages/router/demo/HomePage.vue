@@ -2,12 +2,15 @@
   .container
     .swiper(v-swiper:mySwiper="swiperOption", @transitionend='onTransitionEnd($event)', @slideTo="slideTo(index, speed, runCallbacks)")
       .swiper-wrapper.direction
-        //- .swiper-slide
-        //-   Start(@slideTo="slideToContent", :go-on="goOn")
-        //- .swiper-slide
-        //-   Calendar(@slideTo="slideToContent", :go-on="goOn")
         .swiper-slide
-          C17
+          Start(@slideTo="slideToContent", :go-on="goOn")
+        .swiper-slide
+          Calendar(@slideTo="slideToContent", :go-on="goOn", :ani="sliderIndex === 1")
+        .swiper-slide(v-for='(item,index) in contentPageMap')
+          //- C17F
+          component(:is="item", :ani="sliderIndex === index + 2", @backClick="backClick")
+        //- .swiper-slide
+        //-   C17S
         .swiper-slide
           About(@backClick="backClick")
             //- Start(@listenEnd="startEnd($event)", :ani="isStart", v-if='!startClose')
@@ -25,7 +28,8 @@ import 'swiper/dist/css/swiper.css'
 import Start from './component/Start'
 import Calendar from './component/calendar'
 import About from './component/about'
-import C17 from './component/C17'
+import C17 from './component/C17/C17'
+
 if (process.browser) {
   const VueAwesomeSwiper = require('vue-awesome-swiper/dist/ssr')
   Vue.use(VueAwesomeSwiper)
@@ -36,7 +40,7 @@ export default {
     Calendar,
     About,
     Start,
-    C17
+    C17,
   },
   data() {
     return {
@@ -52,7 +56,21 @@ export default {
 				observer: true,
         observeParents: true,
       },
-      goOn: false
+      goOn: false,
+      sliderIndex: 0,
+      // contentPageMap: {
+      //   0: Start,
+      //   1: Calendar,
+      //   2: C17F,
+      //   3: C17S
+      // }
+      contentPageMap: [
+        // Start,
+        // Calendar,
+        C17
+        // C17F,
+        // C17S,
+      ]
     }
   },
   mounted() {
@@ -60,7 +78,7 @@ export default {
   },
   methods: {
     onTransitionEnd (e) {
-      console.log(e)
+      this.sliderIndex = this.mySwiper.activeIndex
     },
     slideToContent (index, dalay = 2000, duration = 3000) {
       setTimeout( () => {
@@ -69,7 +87,8 @@ export default {
       }, dalay)
     },
     backClick () {
-      this.mySwiper.slideTo(0, 2000)
+      console.log(23)
+      this.mySwiper.slideTo(1, 2000)
       const timer = setTimeout(() => {
         this.goOn = true
         clearTimeout(timer)
