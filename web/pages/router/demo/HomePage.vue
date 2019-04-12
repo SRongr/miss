@@ -34,6 +34,7 @@ import C0828 from './component/C0828/C0828'
 import C1109 from './component/C1109/C1109'
 import C1205 from './component/C1205/C1205'
 import C1231 from './component/C1231/C1231'
+import C0119 from './component/C0119/C0119'
 if (process.browser) {
   const VueAwesomeSwiper = require('vue-awesome-swiper/dist/ssr')
   Vue.use(VueAwesomeSwiper)
@@ -49,7 +50,8 @@ export default {
     C0828,
     C1109,
     C1205,
-    C1231
+    C1231,
+    C0119
   },
   data() {
     return {
@@ -77,7 +79,8 @@ export default {
         // C0828,
         // C1109,
         // C1205,
-        C1231
+        // C1231,
+        C0119
       ]
     }
   },

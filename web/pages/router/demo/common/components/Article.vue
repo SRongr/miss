@@ -1,6 +1,7 @@
 <template lang="pug">
   .wrapper
-    .article(v-for="item in calendarText", :style="{fontSize:`${articleStyle.fontSize/75}em`}") {{item}}
+    //- .article(v-for="item in calendarText", :style="{fontSize:`${articleStyle.fontSize/75}em`}") {{item}}
+    .article(v-for="item in calendarText", :style="articleStyle") {{item}}
 </template>
 
 <script>
@@ -9,14 +10,24 @@ export default {
     calendarText: {
       require: true
     },
+    // articleStyle: {
+    //   require: false,
+    //   default() {
+    //     return {
+    //       fontSize: 44
+    //     }
+    //   }
+    // }
     articleStyle: {
       require: false,
       default() {
         return {
-          fontSize: 44
+          fontSize: `${44/75}em`,
+          color: '#ffffff'
         }
       }
     }
+
   },
   data () {
     return {

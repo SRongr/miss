@@ -29,7 +29,7 @@ export default {
       calendarTextIndex: 0,
       src: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end7.jpeg',
       articleStyle: {
-        fontSize: 38
+        fontSize: `${38/75}em`,
       }
     }
   },

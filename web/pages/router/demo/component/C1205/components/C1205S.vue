@@ -24,10 +24,9 @@ export default {
       calendarText: [
        '明明字难看的一匹， 我是怎么有勇气给你写字的呢。嘿嘿。我觉得我的画还看的过去。有没有注意里面很多表情包呀 (*^__^*)',
       ],
-      calendarTextIndex: 0,
       src: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end7.jpeg',
       articleStyle: {
-        fontSize: 39
+        fontSize: `${39/75}em`
       }
     }
   },
