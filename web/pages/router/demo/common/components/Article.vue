@@ -1,13 +1,23 @@
 <template lang="pug">
   .wrapper
-    .article(v-for="item in calendarText") {{item}}
+    .article(v-for="item in calendarText", :style="{fontSize:`${articleStyle.fontSize/75}em`}") {{item}}
 </template>
 
 <script>
 export default {
-  props: [
-    'calendarText'
-  ],
+  props: {
+    calendarText: {
+      require: true
+    },
+    articleStyle: {
+      require: false,
+      default() {
+        return {
+          fontSize: 44
+        }
+      }
+    }
+  },
   data () {
     return {
 
@@ -33,6 +43,5 @@ export default {
       opacity 0
       fadein(1.5s, 0.5s)
       padding rem(10) rem(100)
-      font-size rem(44)
       text-align center
 </style>

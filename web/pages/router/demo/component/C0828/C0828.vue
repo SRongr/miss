@@ -9,16 +9,15 @@
 
 
 <script>
-import F from './components/F'
-import S from './components/S'
-import T from './components/T'
+import  C0828F from './components/C0828F';
+import C0828S from './components/C0828S'
 import BackCalendar from '../../common/components/BackCalendar'
 export default {
   components: {
-    F,
-    S,
-    T,
-    BackCalendar
+    C0828F,
+    C0828S,
+    BackCalendar,
+   
   },
   props: [
     'ani'
@@ -43,9 +42,10 @@ export default {
         observeParents: true,
       },
       contentPageMap: [
-        F,
-        S,
-        T
+        C0828F,
+        C0828S,
+        // T,
+        // TH
       ],
       sliderIndex: 0
     }
@@ -62,7 +62,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @import '../../../../../css/base.styl'
 @import '../../common/css/main.styl'
 </style>

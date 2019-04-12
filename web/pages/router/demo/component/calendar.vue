@@ -29,13 +29,6 @@ export default {
   },
   props: ['goOn', 'ani'],
   computed: {
-    // describe () {
-    //   if (Array.isArray(this.calendarText[this.calendarTextIndex])) {
-
-    //   } else {
-    //     return this.calendarText[this.calendarTextIndex]
-    //   }
-    // }
   },
   data() {
     return {
@@ -145,7 +138,7 @@ export default {
       }
     },
     showContent () {
-      this.$emit('slideTo', this.index)
+      this.$emit('slideTo', this.index + 3)
       this.index ++         // 到达日期，去展示内容 index++
       setTimeout(() => {
         // this.startValue = this.targetDay

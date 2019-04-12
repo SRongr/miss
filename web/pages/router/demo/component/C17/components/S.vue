@@ -2,13 +2,16 @@
   .wrapper(ref="wrapper")
     .bg
     Article(:calendar-text="calendarText", v-if='ani')
+    Arrow(:delay="2000", v-if='ani')
 </template>
 
 <script>
-import Article from '../common/components/Article'
+import Article from '../../../common/components/Article'
+import Arrow from '../../../common/components/Arrow'
 export default {
   components: {
-    Article
+    Article,
+    Arrow
   },
   props: {
     ani: {
@@ -27,7 +30,6 @@ export default {
         '25级, 没见过SSR, 没见过鸟，主力就是个大黑和吸血姬',
         '某天发现你把我删了, 阴阳师玩了一会也正式弃游了'
       ],
-      calendarTextIndex: 0
     }
   },
   mounted() {
@@ -38,20 +40,17 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../../css/base.styl'
-@import '../common/css/main.styl'
 .wrapper
   width 100%
   height 100%
   background-color #000000
   flex-direction column
-  
   flexC()
   .bg
     position absolute
     width 100%
     height 100%
-    background-image url('../img/hoppy8.png') 
+    background-image url('https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/hoppy8.png') 
     background-size cover
     background-repeat no-repeat
     background-position center

@@ -9,15 +9,17 @@
 
 
 <script>
-import F from './components/F'
+import F from './components/F';
 import S from './components/S'
 import T from './components/T'
+import TH from './components/TH'
 import BackCalendar from '../../common/components/BackCalendar'
 export default {
   components: {
     F,
     S,
     T,
+    TH,
     BackCalendar
   },
   props: [
@@ -45,7 +47,8 @@ export default {
       contentPageMap: [
         F,
         S,
-        T
+        T,
+        TH
       ],
       sliderIndex: 0
     }

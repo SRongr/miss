@@ -2,35 +2,28 @@
   .wrapper(ref="wrapper")
     .bg
     Article(:calendar-text="calendarText", v-if='ani')
-    Arrow(:delay="2000", v-if='ani')
 </template>
 
 <script>
 import Article from '../../../common/components/Article'
 import Arrow from '../../../common/components/Arrow'
 export default {
-  components: {
-    Article,
-    Arrow
-  },
   props: {
     ani: {
       type: Boolean,
       required: true
     },
   },
+  components: {
+    Article,
+    Arrow,
+  },
   data() {
     return {
-      showDescribe: false,
       calendarText: [
-        '于是我在你的空间里得知你玩阴阳师',
-        '作为一个从儿时走到高中的游戏大高玩',
-        '我准备从游戏下手, 想着将来成为高手, 有一些共同话题',
-        '震惊震惊, 没想到这个游戏如此的看脸',
-        '25级, 没见过SSR, 没见过鸟，主力就是个大黑和吸血姬',
-        '某天发现你把我删了, 阴阳师玩了一会也正式弃游了'
+        '3月份，学了css3 (做了动画)，4月份学了设计模式(做了雪花场景), 5月份学了Vue(整体的结构框架), 6月份学到了发布到heroKu外网上, 每学一点， 我就参与构思。嘿嘿, 我也是有私心的。 事实证明， 你给我的动力， 太大了。这次的项目，我用到了更多。整体的逻辑，是在工作中学到过的。 是的。这个项目从很久之前就开始想了， 只不过之前的日历构想，是记录我们以后的点点滴滴。 唉',
       ],
-      calendarTextIndex: 0
+      calendarTextIndex: 0,
     }
   },
   mounted() {
@@ -46,15 +39,13 @@ export default {
 .wrapper
   width 100%
   height 100%
-  background-color #000000
+  // background-color #000000
   flex-direction column
-  
-  flexC()
   .bg
     position absolute
     width 100%
     height 100%
-    background-image url('../../../img/hoppy8.png') 
+    background-image url('https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/miss4.jpeg')
     background-size cover
     background-repeat no-repeat
     background-position center

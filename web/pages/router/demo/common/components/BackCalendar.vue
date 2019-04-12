@@ -25,7 +25,7 @@ export default {
 @import '../../../../../css/base.styl'
 @import '../css/main.styl'
   .wrapper
-    position absolute 
+    position absolute
     bottom rem(20)
     left rem(20)
     height rem(50)

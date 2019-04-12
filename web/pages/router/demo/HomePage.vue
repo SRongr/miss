@@ -29,7 +29,11 @@ import Start from './component/Start'
 import Calendar from './component/calendar'
 import About from './component/about'
 import C17 from './component/C17/C17'
-
+import C0702 from './component/C0702/C0702'
+import C0828 from './component/C0828/C0828'
+import C1109 from './component/C1109/C1109'
+import C1205 from './component/C1205/C1205'
+import C1231 from './component/C1231/C1231'
 if (process.browser) {
   const VueAwesomeSwiper = require('vue-awesome-swiper/dist/ssr')
   Vue.use(VueAwesomeSwiper)
@@ -41,6 +45,11 @@ export default {
     About,
     Start,
     C17,
+    C0702,
+    C0828,
+    C1109,
+    C1205,
+    C1231
   },
   data() {
     return {
@@ -58,18 +67,17 @@ export default {
       },
       goOn: false,
       sliderIndex: 0,
-      // contentPageMap: {
-      //   0: Start,
-      //   1: Calendar,
-      //   2: C17F,
-      //   3: C17S
-      // }
       contentPageMap: [
         // Start,
         // Calendar,
-        C17
+        // C17,
         // C17F,
         // C17S,
+        // C0702,
+        // C0828,
+        // C1109,
+        // C1205,
+        C1231
       ]
     }
   },
