@@ -38,6 +38,7 @@ import C0119 from './component/C0119/C0119'
 import C0225 from './component/C0225/C0225'
 import C0307 from './component/C0307/C0307'
 import C0406 from './component/C0406/C0406'
+import C0407 from './component/C0407/C0407'
 if (process.browser) {
   const VueAwesomeSwiper = require('vue-awesome-swiper/dist/ssr')
   Vue.use(VueAwesomeSwiper)
@@ -55,7 +56,9 @@ export default {
     C1205,
     C1231,
     C0119,
-    C0225
+    C0225,
+    C0406,
+    C0407,
   },
   data() {
     return {
@@ -76,18 +79,19 @@ export default {
       contentPageMap: [
         // Start,
         // Calendar,
-        // C17,
+        C17,
         // C17F,
         // C17S,
-        // C0702,
-        // C0828,
-        // C1109,
-        // C1205,
-        // C1231,
-        // C0119,
-        // C0225,
-        // C0307,
+        C0702,
+        C0828,
+        C1109,
+        C1205,
+        C1231,
+        C0119,
+        C0225,
+        C0307,
         C0406,
+        C0407,
       ]
     }
   },
@@ -98,7 +102,8 @@ export default {
     onTransitionEnd (e) {
       this.sliderIndex = this.mySwiper.activeIndex
     },
-    slideToContent (index, dalay = 2000, duration = 3000) {
+    slideToContent (index, dalay = 1000, duration = 1000) {
+      console.log(index)
       setTimeout( () => {
         this.goOn = false
         this.mySwiper.slideTo(index, duration) 

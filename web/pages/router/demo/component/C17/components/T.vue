@@ -20,12 +20,11 @@ export default {
     return {
       showDescribe: false,
       calendarText: [
-        '某天发现你把我删了, 阴阳师玩了一会也正式弃游了',
         '想来自己天天无所事事, 游手好闲, 实在是没什么闪光点, 哪来的勇气追女神呢',
         '',
         '我喜欢你',
         '这是第一次付出行动',
-        '惨败'
+        '失败啊'
       ],
       calendarTextIndex: 0
     }

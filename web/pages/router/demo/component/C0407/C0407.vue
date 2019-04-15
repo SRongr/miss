@@ -9,15 +9,20 @@
 
 
 <script>
-import C0406F from './components/C0406F';
-import C0406S from './components/C0406S'
+import C0407F from './components/C0407F'
+import C0407S from './components/C0407S'
+import C0407T from './components/C0407T'
+import C0407TH from './components/C0407TH'
+import C0407FI from './components/C0407FI'
 import BackCalendar from '../../common/components/BackCalendar'
 export default {
   components: {
-    C0406F,
-    C0406S,
+    C0407F,
+    C0407S,
+    C0407T,
+    C0407TH,
+    C0407FI,
     BackCalendar,
-   
   },
   props: [
     'ani'
@@ -42,8 +47,11 @@ export default {
         observeParents: true,
       },
       contentPageMap: [
-        C0406F,
-        C0406S,
+        C0407F,
+        C0407S,
+        C0407T,
+        C0407TH,
+        C0407FI,
       ],
       sliderIndex: 0
     }

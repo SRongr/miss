@@ -38,7 +38,7 @@ export default {
       src1: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end21.png',
       src2: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/hoppy10.jpeg',
       articleStyle: {
-        fontSize: 38
+         fontSize: `${38/75}em`,
       }
     }
   },

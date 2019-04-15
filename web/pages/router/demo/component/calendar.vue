@@ -33,21 +33,33 @@ export default {
   data() {
     return {
       calendarText: [
-        '这是你不知道的一年',
+        '这是你不知道的一年 C17',
         `我们跳过这一年, 从第二次加你开始
-        时间滚动`,
-        '直到失去了, 才发现有很多该珍惜的没有珍惜',
-        '现在, 我想捡起仅剩不多的记忆碎片',
+        时间穿梭~`,
+        'C0828',
+        'C1109',
+        'C1205',
+        'C1231',
+        'C0119',
+        'C0225',
+        'C0307',
+        'C0406',
+        'C0407',
         '那么, 欢迎来到时光日历'
       ],
       calendarTextIndex: 0,
       dateArr: [
-        [1,6],
-        [2, 5],
-        [3, 2],
-        // [5,4]
-        // [12,2],
-        // [1,2]
+        [1, 1],
+        [7, 2],
+        [8, 28],
+        [11, 9],
+        [12, 5],
+        [12, 31],
+        [1, 19],
+        [2, 25],
+        [3, 7],
+        [4, 6],
+        [4, 7]
       ],
       month: 1, // 日历开始月份
       targetDay: 0, // 目标日期默认是0 ， 代表这个月份没有目标日期
@@ -72,20 +84,30 @@ export default {
       if (boolean) {
         if (this.init) {
           const timer = setTimeout(() => {
-            this.$emit('slideTo', 2)
+            this.$emit('slideTo', this.index + 2)
             this.init = false
             clearTimeout(timer)
-          }, 3000)
+          }, 1000)
         } else {
-          if (this.index === 0) {
-            setTimeout(() => {
+          if (this.index == 1) {
+            console.log()
+            const timer1 = setTimeout(() => {
               this.year = 2018
               this.showCountup = true
-              this.getTargetDay()  
-            }, 5000)
+              // this.getTargetDay()  
+              this.month = this.dateArr[this.index][0]
+              this.targetDay = this.dateArr[this.index][1]
+            }, 2000)
+            const timer2 = setTimeout(() => {
+              this.showContent()
+            }, (4000));
+          } else {
+            this.getTargetDay()  
           }
         }
       } else {
+        console.log('calendarTe++')
+        this.index ++
         this.calendarTextIndex ++
       }
     }
@@ -99,7 +121,7 @@ export default {
     // setTimeout(() => {
     //   this.calendarTextStart()
     // }, 1000)
-
+console.log(this.dateArr)
     if (this.month === this.dateArr[0][0]) {
       this.targetDay = this.dateArr[0][1]
     } else {
@@ -138,8 +160,9 @@ export default {
       }
     },
     showContent () {
-      this.$emit('slideTo', this.index + 3)
-      this.index ++         // 到达日期，去展示内容 index++
+      console.log('showContent')
+      this.$emit('slideTo', this.index + 2)
+      // this.index ++         // 到达日期，去展示内容 index++
       setTimeout(() => {
         // this.startValue = this.targetDay
         // this.getTargetDay()

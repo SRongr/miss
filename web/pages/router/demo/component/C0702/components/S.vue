@@ -51,6 +51,5 @@ export default {
     background-size cover
     background-repeat no-repeat
     background-position center
-    opacity 0.5
   
 </style>

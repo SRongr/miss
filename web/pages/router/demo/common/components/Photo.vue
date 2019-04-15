@@ -1,16 +1,12 @@
 <template lang="pug">
   .wrapper
-    //- img.img(ref="img") 
     img.img(:src="src")
-    //- img.img(src="../../img/end12.png") 
-    //- .img(:style="{backgroundImage: `url(${src})`}")
 </template>
 
 <script>
 export default {
   props: ['src'],
   mounted() {
-    console.log(this.src )
   }
 }
 </script>
