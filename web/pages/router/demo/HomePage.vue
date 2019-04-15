@@ -9,14 +9,6 @@
         .swiper-slide(v-for='(item,index) in contentPageMap')
           //- C17F
           component(:is="item", :ani="sliderIndex === index + 2", @backClick="backClick")
-        //- .swiper-slide
-        //-   C17S
-        .swiper-slide
-          About(@backClick="backClick")
-            //- Start(@listenEnd="startEnd($event)", :ani="isStart", v-if='!startClose')
-          //-   .start
-          //- .swiper-slide(v-for='(item,index) in contentData')
-          //-   component(:is="contentPageMap[item.pageNo].c", :gender="data.gender", :data="item", :ani="sliderIndex === index + 1")
           //- .swiper-slide(v-if='shareInfo')
           //-   Share(:share-no="shareInfo.pageNo", :gender="data.gender")
       .swiper-pagination(style="display: none")

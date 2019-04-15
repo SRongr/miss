@@ -56,14 +56,18 @@ export default {
   },
   methods: {
     createCountup() {
-      if (this.targetDay) {
-        this.duration = this.targetDay / 30 // 数字滚动速度
-        this.endValue = this.targetDay
-      } else {
-        this.duration = 1 // 数字滚动速度一个月的满速
-        this.endValue = 30
-      }
-      const duration = this.targetDay ? this.targetDay / 15 : 2
+      // if (this.targetDay) {
+      //   this.duration = (this.targetDay - this.startValue) / 30// 数字滚动速度
+      //   this.endValue = this.targetDay
+      //   console.log(this.duration)
+      // } else {
+      //   this.duration = 1 // 数字滚动速度一个月的满速
+      //   this.endValue = 30
+      // }  
+      console.log(this.targetDay - this.startValue)
+      // this.duration = Math.abs((this.targetDay - this.startValue) / 30)
+      this.endValue = this.targetDay ? this.targetDay : 30
+      const duration = Math.abs(this.endValue - this.startValue) / 15
       const options = {
         useEasing: false
       }
@@ -88,11 +92,8 @@ export default {
             this.$emit('showContent')
           } else {
             // 跑完一个月
-            countUp.reset()
             this.$emit("addMonth")
-            countUp.start(() => {
-              this.countupReset(countUp, targetDay)
-            })
+            this.resetCountUp()
           }
       })
     },

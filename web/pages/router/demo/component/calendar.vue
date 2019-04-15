@@ -12,7 +12,7 @@
             .text 月
         .paper-bottom
           //- .paper-bottom-content 9
-          CountUp.num(:target-day="targetDay", v-if='showCountup', @addMonth="addMonth", @showContent="showContent")
+          CountUp.num(:target-day="targetDay",:start-value="startValue" v-if='showCountup', @addMonth="addMonth", @showContent="showContent")
           .num(v-else) 1
           .paper-shadow
       .calendar-bottom
@@ -150,21 +150,26 @@ console.log(this.dateArr)
       this.getTargetDay()
     },
     getTargetDay () {
+      const lastMonth = this.dateArr[this.index - 1][0]
+      console.log(lastMonth, this.month, 'aaaaaaaaaaaaaaaaa')
+      const isConnect = Math.abs(lastMonth - this.month) == 0 || (lastMonth == 12 && this.month == 1)
       if (this.dateArr.length <= this.index) {
         return
       }
+      this.startValue = isConnect ? this.targetDay : 1
+      console.log(this.startValue, isConnect, this.targetDay)
       if (this.dateArr[this.index][0] === this.month) {
-          this.targetDay = this.dateArr[this.index][1]
+        this.targetDay = this.dateArr[this.index][1]
       } else {
         this.targetDay = 0
       }
+      console.log(this.startValue, this.targetDay)
     },
     showContent () {
-      console.log('showContent')
       this.$emit('slideTo', this.index + 2)
       // this.index ++         // 到达日期，去展示内容 index++
       setTimeout(() => {
-        // this.startValue = this.targetDay
+        this.startValue = this.targetDay
         // this.getTargetDay()
       }, 1000)
     }

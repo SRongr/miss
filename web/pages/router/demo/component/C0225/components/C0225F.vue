@@ -2,7 +2,6 @@
   .wrapper
     Photo.photo(:src="src")
     Article.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
-    //- BackCalendar(@backClick="backClick")
 </template>
 
 <script>

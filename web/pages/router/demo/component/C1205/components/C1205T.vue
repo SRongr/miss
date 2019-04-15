@@ -43,10 +43,6 @@ export default {
     }
   },
   mounted() {
-    // this.showDescribe = true
-    // setTimeout(() => {
-    //   this.calendarTextStart()
-    // }, 1000)
   },
   methods: {
   }
