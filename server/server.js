@@ -28,7 +28,7 @@ let render;
 const templatePath = resolve('../web/tpl.html');
 let baseRender = (renderer, req, res) => {
   //context是一个对象，在模版中，使用<title>{{ title }}</title>方式填充 https://ssr.vuejs.org/zh/basic.html
-  let context = { title: 'VueSSR Multipages', url: req.url };
+  let context = { title: 'TimeCalendar', url: req.url };
   renderer.renderToString(context, (err, html) => {
     const state = JSON.stringify(context.state)
     // console.log(state)
