@@ -39,12 +39,12 @@ export default {
         `我们跳过这一年, 从第二次加你开始
         时间穿梭~`,
         '我要是心思缜密一点就好了',
-        '听到你的声音，真的很开心',
+        '第一次发语音消息',
         '可以攒钱啦',
         '这一天还会出现吗',
-        '不想让你伤心',
+        '不要伤心啊',
         '即刻启程',
-        '在洛阳第一次想见',
+        '在洛阳第一次相见',
         '无聊做个小东西',
         '前夜',
         '第二次相见',
@@ -192,7 +192,7 @@ export default {
     top rem(100)
   .year
     height rem(200)
-    line-height rem(0)
+    line-height rem(150)
     font-size rem(100)
   .calendar-wrapper
     width rem(500)

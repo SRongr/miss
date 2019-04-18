@@ -1,7 +1,7 @@
 <template lang="pug">
   .wrapper(ref="wrapper")
     .bg
-    Article(:calendar-text="calendarText", v-if='ani')
+    Article(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
 </template>
 
 <script>
@@ -25,6 +25,10 @@ export default {
       calendarText: [
         '大三最后那几天。 这我在学校里最快乐的时光。 我一度认为， 我的大学是荒废的。不完整的。 只有那段时间，我才感觉，我的大学生活是成功的',
       ],
+      articleStyle: {
+        color: 'coral',
+        fontSize: `${44/75}em`,
+      },
     }
   },
   mounted() {

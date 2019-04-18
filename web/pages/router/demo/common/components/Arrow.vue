@@ -34,7 +34,6 @@ export default {
 		left 50%
 		margin-left rem(-45/2)
 		animation arrowflash 1s linear infinite alternate
-    // z-index 10
 	@keyframes arrowflash {
 		from {
 			opacity 0.5

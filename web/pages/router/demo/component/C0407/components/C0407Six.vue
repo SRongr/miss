@@ -1,8 +1,8 @@
 <template lang="pug">
-  .C0407T-wrapper
-    Photo.photo(:src="src1")
-    Article.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
-    Arrow(:delay="2000", v-if='ani')
+  .C0407TI-wrapper
+    Photo.photo1(:src="src")
+    //- Photo.photo2(:src="src2")
+    //- Article.article-wrapper(:calendar-text="calendarText1", v-if='ani', :article-style="articleStyle")
 </template>
 
 <script>
@@ -19,15 +19,15 @@ export default {
   props: ['ani'],
   data() {
     return {
-      calendarText: [
+      calendarText1: [
         // 最后一天
-       '刚开始的时候，拍了这张照片。我想等各回各家之后，好好的向我哥们秀一下，今天是我和我女神出来了！！！！'
+       ""
       ],
       articleStyle: {
         fontSize: `${38/75}em`,
         fontWeight: '700',
       },
-      src1: images.src2,
+      src: images.src6,
     }
   },
   methods: {
@@ -42,28 +42,18 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../../../../css/base.styl'
 @import '../../../common/css/main.styl'
-  .C0407T-wrapper
+  .C0407TI-wrapper
     width 100% 
     height 100%
     position relative
     background-color #000000
     background-size cover
     background-repeat no-repeat
-    .bg
-      width 100%
-      height 100%
-    .photo
+    .photo1
       position absolute
-      right 0
-      width 100%
-      height rem(500)
-    .article-wrapper
-      position absolute
-      top rem(500)
-      left 0
-      right 0
-      bottom 0
-      height rem(700)
+      top 50%
+      left 50%
+      transform translate(-50%, -50%)
 
 </style>
 

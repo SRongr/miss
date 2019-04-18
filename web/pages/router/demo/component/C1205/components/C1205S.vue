@@ -1,6 +1,6 @@
 <template lang="pug">
   .wrapper(ref="wrapper")
-    img.bg(src="https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/miss5.jpeg")
+    img.bg(:src="src")
     Article.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
     Arrow(:delay="2000", v-if='ani')
 </template>
@@ -27,7 +27,7 @@ export default {
       ],
       src: images.src2,
       articleStyle: {
-        fontSize: `${39/75}em`
+        fontSize: `${35/75}em`
       }
     }
   },
@@ -52,5 +52,6 @@ export default {
   flex-direction column
   .bg 
     width 100% 
+    height 80%
   
 </style>

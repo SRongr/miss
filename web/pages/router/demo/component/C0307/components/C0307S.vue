@@ -73,8 +73,8 @@ export default {
     .article-wrapper
       // height 50%
       position absolute
-      height rem(400)
-      top rem(900)
+      height rem(150)
+      bottom rem(100)
       background-color #000000
 </style>
 

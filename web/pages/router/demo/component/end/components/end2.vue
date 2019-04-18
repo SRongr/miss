@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       calendarText: [
-       '我也有点迷上布袋戏了。只是。有些虐心啊。。。'
+       '未来。。。'
       ],
       calendarTextIndex: 0,
       src1: images.src2,

@@ -1,8 +1,8 @@
 <template lang="pug">
   .wrapper(ref="wrapper")
     Photo.photo1(:src="src1")
+    Article.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
     Arrow(:delay="2000", v-if='ani')
-    Article.article-wrapper(:calendar-text="calendarText", v-if='ani')
 </template>
 
 <script>
@@ -27,7 +27,11 @@ export default {
       calendarText: [
         '咳咳。 看到这段说说的时候 我是一脸懵逼。。。随后劝你消消气。别跟智障过不去。。 我也查了一下。 当然我一个旁观者并不能在一时间能了解太多东西。当然，在这里我想说的主要是下面一页',
       ],
-      src1: images.src1
+      src1: images.src1,
+      articleStyle: {
+        fontSize: `${35/75}em`,
+        fontWeight: '400'
+      }
     }
   },
   mounted() {

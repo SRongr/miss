@@ -32,12 +32,6 @@ export default {
       }
     }
   },
-  // mounted() {
-  //   this.showDescribe = true
-  //   setTimeout(() => {
-  //     this.calendarTextStart()
-  //   }, 1000)
-  // },
   methods: {
     calendarTextStart () {
       const describe = this.$refs.describe
@@ -60,39 +54,9 @@ export default {
       if (this.calendarTextIndex !== this.calendarText.length - 1 ){
         return 
       }
-      // const audio
-      // audio(:src="images.contentMp3", id="contentAudio")
-      this.handleFullScreen()
       this.$emit('slideTo', 2, 0)
       this.$refs.wrapper.className = 'wrapper out'
-      
     },
-    handleFullScreen () {
-      let element = document.documentElement;
-      if (this.fullscreen) {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.webkitCancelFullScreen) {
-          document.webkitCancelFullScreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.msExitFullscreen) {
-          document.msExitFullscreen();
-        }
-      } 
-      // else {
-      //   if (element.requestFullscreen) {
-      //     element.requestFullscreen();
-      //   } else if (element.webkitRequestFullScreen) {
-      //     element.webkitRequestFullScreen();
-      //   } else if (element.mozRequestFullScreen) {
-      //     element.mozRequestFullScreen();
-      //   } else if (element.msRequestFullscreen) {
-      //     // IE11
-      //     element.msRequestFullscreen();
-      //   }
-      // }
-    }
   }
 }
 </script>

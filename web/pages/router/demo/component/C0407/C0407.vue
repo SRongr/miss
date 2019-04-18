@@ -14,6 +14,7 @@ import C0407S from './components/C0407S'
 import C0407T from './components/C0407T'
 import C0407TH from './components/C0407TH'
 import C0407FI from './components/C0407FI'
+import C0407Six from './components/C0407Six'
 import BackCalendar from '../../common/components/BackCalendar'
 export default {
   components: {
@@ -22,6 +23,7 @@ export default {
     C0407T,
     C0407TH,
     C0407FI,
+    C0407Six,
     BackCalendar,
   },
   props: [
@@ -52,6 +54,7 @@ export default {
         C0407T,
         C0407TH,
         C0407FI,
+        C0407Six,
       ],
       sliderIndex: 0
     }
