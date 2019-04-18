@@ -52,6 +52,6 @@ export default {
   flex-direction column
   .bg 
     width 100% 
-    height 80%
+    height 75%
   
 </style>

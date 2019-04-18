@@ -24,7 +24,7 @@ export default {
       ],
       src: images.src,
       articleStyle: {
-        fontSize: `${32/75}em`,
+        fontSize: `${30/75}em`,
         fontWeight: '400'
       }
     }

@@ -3,6 +3,7 @@
     Photo.photo1(:src="src1")
     Photo.photo2(:src="src2")
     Article.article-wrapper(:calendar-text="calendarText1", v-if='ani', :article-style="articleStyle")
+    Arrow(:delay="2000", v-if='ani')
 </template>
 
 <script>
