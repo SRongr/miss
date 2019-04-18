@@ -1,8 +1,8 @@
 <template lang="pug">
   .wrapper(ref="wrapper")
     .describe.infinite(ref="describe",v-if='showDescribe && ani') {{calendarText[calendarTextIndex]}}
+    .describe.one(v-if='ani && !showDescribe') {{calendarText[calendarTextIndex]}}
     .start.one(@touchstart="touchstart",@touchend="touchend", ref="start", v-if='ani') START
-    //- audio(src="https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/%E9%99%88%E6%B7%91%E6%A1%A6%20-%20%E6%BB%9A%E6%BB%9A%E7%BA%A2%E5%B0%98.mp3", id="contentAudio")
 </template>
 
 <script>
@@ -43,9 +43,11 @@ export default {
       const describe = this.$refs.describe
       const timer = setInterval(() => {
         this.calendarTextIndex ++
+        console.log(this.calendarTextIndex)
         if (this.calendarTextIndex === this.calendarText.length - 1) {
           clearInterval(timer)
-          describe.className = "describe one"
+          // describe.className = "describe one"
+          this.showDescribe = false
           console.log('slideTo')
         }
       }, 3000)
@@ -60,8 +62,36 @@ export default {
       }
       // const audio
       // audio(:src="images.contentMp3", id="contentAudio")
+      this.handleFullScreen()
       this.$emit('slideTo', 2, 0)
       this.$refs.wrapper.className = 'wrapper out'
+      
+    },
+    handleFullScreen () {
+      let element = document.documentElement;
+      if (this.fullscreen) {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitCancelFullScreen) {
+          document.webkitCancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+      } 
+      // else {
+      //   if (element.requestFullscreen) {
+      //     element.requestFullscreen();
+      //   } else if (element.webkitRequestFullScreen) {
+      //     element.webkitRequestFullScreen();
+      //   } else if (element.mozRequestFullScreen) {
+      //     element.mozRequestFullScreen();
+      //   } else if (element.msRequestFullscreen) {
+      //     // IE11
+      //     element.msRequestFullscreen();
+      //   }
+      // }
     }
   }
 }
@@ -87,7 +117,7 @@ export default {
     &.infinite
       fadein(1.5s, 1s, alternate infinite)
     &.one
-      fadein(1.5s, 16s, forwards)
+      fadein(1.5s, .5s, forwards)
   .start
     opacity 0
     width rem(400)

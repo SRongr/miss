@@ -91,6 +91,9 @@ export default {
     font-size rem(40)
     .fade
       width 100%
+      opacity  0.5
+      fade(fade, 0.5, 1)
+      animation fade 1s linear alternate infinite
 </style>
 
 
