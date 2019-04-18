@@ -12,6 +12,7 @@
 import Article from '../../../common/components/Article'
 import Arrow from '../../../common/components/Arrow'
 import Photo from '../../../common/components/Photo'
+import images from '../images.json'
 export default {
   props: {
     ani: {
@@ -26,11 +27,11 @@ export default {
   },
   data() {
     return {
-      src1: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end11.png',
-      src2: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end12.png',
-      src3: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end15.png',
-      src4: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end16.jpg',
-      src5: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end18.png'
+      src1: images.src1,
+      src2: images.src2,
+      src3: images.src3,
+      src4: images.src4,
+      src5: images.src5
     }
   },
   mounted() {

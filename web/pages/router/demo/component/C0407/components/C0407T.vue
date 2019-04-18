@@ -9,6 +9,7 @@
 import Article from '../../../common/components/Article'
 import Arrow from '../../../common/components/Arrow'
 import Photo from '../../../common/components/Photo'
+import images from '../images.json'
 export default {
   components: {
     Article,
@@ -20,7 +21,7 @@ export default {
     return {
       calendarText: [
         // 最后一天
-       '刚开始的时候，拍了这张照片。我想等各回各家之后，好好的向我哥们秀一下，今天是我和我女神出来了。 呵，这顿饭吃的真不安宁啊。'
+       '刚开始的时候，拍了这张照片。我想等各回各家之后，好好的向我哥们秀一下，今天是我和我女神出来了。 这顿饭吃的好难受。'
       ],
       articleStyle: {
         fontSize: `${38/75}em`,
@@ -28,7 +29,7 @@ export default {
         // color: '#ff0087',
         // fontFamily: 'cursive',
       },
-      src1: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/lastDay2.jpeg'
+      src1: images.src2,
     }
   },
   methods: {

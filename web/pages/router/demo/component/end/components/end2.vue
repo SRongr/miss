@@ -1,8 +1,9 @@
 <template lang="pug">
-  .wrapper(ref="wrapper")
-    Photo.photo(:src="src")
+  .end-wrapper(ref="wrapper")
+    Photo.photo1(:src="src1" v-if="ani")
+    Photo.photo2(:src="src2" v-if="ani")
+    Photo.photo3(:src="src3" v-if="ani")
     Article.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
-    Arrow(:delay="2000", v-if='ani')
 </template>
 
 <script>
@@ -25,10 +26,12 @@ export default {
   data() {
     return {
       calendarText: [
-       '每月5号发工资。嘿嘿，这是第一个月有剩余哦。 给我心爱的女神寄点好吃的。平时你给我的印象，就是忙。经常性的不回消息或者晚回。临近考研，我也怕耽误你学习。微信太费时间啦。给你写字吧。'
+       '我也有点迷上布袋戏了。只是。有些虐心啊。。。'
       ],
       calendarTextIndex: 0,
-      src: images.src1,
+      src1: images.src2,
+      src2: images.src3,
+      src3: images.src4,
       articleStyle: {
         fontSize: `${38/75}em`,
       }
@@ -48,7 +51,7 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../../../../css/base.styl'
 @import '../../../common/css/main.styl'
-.wrapper
+.end-wrapper
   width 100%
   height 100%
   background-color #000000
@@ -57,15 +60,46 @@ export default {
   flexC()
   justify-content space-between
   flex-direction column
-  .photo
-    // height 35%
-    // width rem(500)
+  .photo1
     position absolute
-    width rem(750)
-    height 40%
+    opacity 0
+    left rem(40)
+    top rem(40)
+    width rem(300)
+    height rem(400)
+    transform rotate(350deg)
+    fade(photo1)
+    animation photo1 linear 2s forwards 2s
+  .photo2
+    position absolute
+    opacity 0
+    right rem(40)
+    top rem(40)
+    width rem(300)
+    height rem(400)
+    transform rotate(350deg)
+    fade(photo1)
+    animation photo1 linear 2s forwards 2s
+  .photo3
+    position absolute
+    bottom rem(100)
+    opacity 0
+    width 100%
+    height rem(400)
+    // transform rotate(350deg)
+    fade(photo1)
+    animation photo1 linear 2s forwards 2s
+  .photo4
+    position absolute
+    opacity 0
+    width rem(300)
+    height rem(400)
+    transform rotate(350deg)
+    fade(photo1)
+    animation photo1 linear 2s forwards 2s
   .article-wrapper
-    position absolute
-    bottom rem(0)
-    height 60%
+    // position absolute
+    // bottom rem(0)
+    height 100%
   
 </style>

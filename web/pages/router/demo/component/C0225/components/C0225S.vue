@@ -10,6 +10,7 @@
 import Photo from '../../../common/components/Photo'
 import Article from '../../../common/components/Article'
 import BackCalendar from '../../../common/components/BackCalendar'
+import images from '../images.json'
 export default {
   components: {
     Photo,
@@ -23,8 +24,8 @@ export default {
         //  终于踏上这条路了
        '嘿嘿。这就是我找的房子了。精装修，小阳台。锅碗瓢盆样样齐全。我还淘了电脑桌，热水器。加湿器，懒人桌。小冰箱。新东方大厨在线烹饪，老头子吃了直喊好！好想让你尝尝我的手艺啊 O(∩_∩)O'
       ],
-      src1: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/miss9.jpeg',
-      src2: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end23.jpeg',
+      src1: images.src2,
+      src2: images.src3,
       articleStyle: {
         fontSize: `${35/75}em`,
         fontWeight: '400'

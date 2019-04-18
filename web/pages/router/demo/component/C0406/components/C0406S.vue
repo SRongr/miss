@@ -4,13 +4,11 @@
 </template>
 
 <script>
-import Photo from '../../../common/components/Photo'
 import Article from '../../../common/components/Article'
 import Arrow from '../../../common/components/Arrow'
 import BackCalendar from '../../../common/components/BackCalendar'
 export default {
   components: {
-    Photo,
     Article,
     Arrow,
     BackCalendar,

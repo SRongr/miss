@@ -5,7 +5,14 @@
 
 <script>
 export default {
-  props: ['src'],
+  props: {
+    src: String,
+  },
+  data() {
+    return {
+      ani: false
+    }
+  },
   mounted() {
   }
 }
@@ -19,6 +26,7 @@ export default {
     .img
       width 100%
       height 100%
+      
       
 </style>
 

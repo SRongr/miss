@@ -1,6 +1,5 @@
 <template lang="pug">
-  .wrapper(ref="wrapper")
-    .bg
+  .wrapper
     Article.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
     BackCalendar(@backClick="backClick")
 </template>
@@ -8,30 +7,25 @@
 <script>
 import Article from '../../common/components/Article'
 import BackCalendar from '../../common/components/BackCalendar'
+import images from './images.json'
 export default {
-  props: {
-    ani: {
-      type: Boolean,
-      required: true
-    },
-  },
   components: {
     Article,
     BackCalendar
   },
+  props: ['ani'],
   data() {
     return {
       calendarText: [
-        '这是我一年里最激动的时候, 有多激动。 可能再也感受不到的激动',
+       '嘿嘿。一个智能回复机器人。秒回哦',
       ],
-      calendarTextIndex: 0,
+      src: images.src,
       articleStyle: {
-        color: 'red',
         fontSize: `${44/75}em`,
-      },
+        fontWeight: '400',
+        color: 'red'
+      }
     }
-  },
-  mounted() {
   },
   methods: {
     backClick () {
@@ -46,9 +40,13 @@ export default {
 @import '../../../../../css/base.styl'
 @import '../../common/css/main.styl'
   .wrapper
-    width 100%
+    width 100% 
     height 100%
-    background-image url('https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end9.jpeg')
-    background-position center center
+    position relative
+    background-color #000000
+    background-image url('https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end13.jpeg')
+    background-position center
     background-size cover
+    background-repeat no-repeat
+
 </style>

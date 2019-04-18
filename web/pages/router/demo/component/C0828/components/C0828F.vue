@@ -9,6 +9,7 @@
 import Article from '../../../common/components/Article'
 import Arrow from '../../../common/components/Arrow'
 import Photo from '../../../common/components/Photo'
+import images from '../images.json'
 export default {
   props: {
     ani: {
@@ -26,7 +27,7 @@ export default {
       calendarText: [
         '咳咳。 看到这段说说的时候 我是一脸懵逼。。。随后劝你消消气。别跟智障过不去。。 我也查了一下。 当然我一个旁观者并不能在一时间能了解太多东西。当然，在这里我想说的主要是下面一页',
       ],
-      src1: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end20.jpg',
+      src1: images.src1
     }
   },
   mounted() {

@@ -9,6 +9,7 @@
 import Article from '../../../common/components/Article'
 import Arrow from '../../../common/components/Arrow'
 import Photo from '../../../common/components/Photo'
+import images from '../images.json'
 export default {
   components: {
     Article,
@@ -28,7 +29,7 @@ export default {
         // color: '#ff0087',
         // fontFamily: 'cursive',
       },
-      src: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end26.jpeg'
+      src: images.src1
     }
   },
   methods: {

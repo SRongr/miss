@@ -65,7 +65,6 @@ export default {
       //   this.endValue = 30
       // }  
       console.log(this.targetDay - this.startValue)
-      // this.duration = Math.abs((this.targetDay - this.startValue) / 30)
       this.endValue = this.targetDay ? this.targetDay : 30
       const duration = Math.abs(this.endValue - this.startValue) / 15
       const options = {

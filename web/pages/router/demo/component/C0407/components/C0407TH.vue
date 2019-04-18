@@ -1,6 +1,6 @@
 <template lang="pug">
   .C0407TH-wrapper
-    Photo.photo(:src="src1")
+    Photo.photo(:src="src")
     Article.article-wrapper(:calendar-text="calendarText1", v-if='ani', :article-style="articleStyle")
     Article.article-wrapper2(:calendar-text="calendarText2", v-if='ani', :article-style="articleStyle2")
     Arrow(:delay="2000", v-if='ani')
@@ -10,6 +10,7 @@
 import Article from '../../../common/components/Article'
 import Arrow from '../../../common/components/Arrow'
 import Photo from '../../../common/components/Photo'
+import images from '../images.json'
 export default {
   components: {
     Article,
@@ -36,7 +37,7 @@ export default {
         fontSize: `${20/75}em`,
         fontWeight: '400',
       },
-      src1: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/lastDay3.jpeg'
+      src: images.src3
     }
   },
   methods: {

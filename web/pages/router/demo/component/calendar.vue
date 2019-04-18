@@ -1,5 +1,7 @@
 <template lang="pug">
   .wrapper
+    .close
+
     .describe(v-if="ani") {{calendarText[calendarTextIndex]}}
     .year {{year}} 年
     .calendar-wrapper
@@ -27,25 +29,26 @@ export default {
   components: {
     CountUp
   },
-  props: ['goOn', 'ani'],
+  props: ['ani'],
   computed: {
   },
   data() {
     return {
       calendarText: [
-        '这是你不知道的一年 C17',
+        '这是你不知道的一年',
         `我们跳过这一年, 从第二次加你开始
         时间穿梭~`,
-        'C0828',
-        'C1109',
-        'C1205',
-        'C1231',
-        'C0119',
-        'C0225',
-        'C0307',
-        'C0406',
-        'C0407',
-        '那么, 欢迎来到时光日历'
+        '我要是心思缜密一点就好了',
+        '听到你的声音，真的很开心',
+        '可以攒钱啦',
+        '这一天还会出现吗',
+        '不想让你伤心',
+        '即刻启程',
+        '在洛阳第一次想见',
+        '无聊做个小东西',
+        '前夜',
+        '第二次相见',
+        '结束了吗'
       ],
       calendarTextIndex: 0,
       dateArr: [
@@ -58,6 +61,7 @@ export default {
         [1, 19],
         [2, 25],
         [3, 7],
+        [3, 8],
         [4, 6],
         [4, 7]
       ],
@@ -72,25 +76,21 @@ export default {
     }
   },
   watch: {
-    // goOn(boolean) {
-    //   console.log(boolean)
-    //   if (boolean) {
-    //     this.startValue = this.targetDay
-    //     this.getTargetDay()
-    //   }
-    // },
     ani(boolean) {
       console.log(boolean)
       if (boolean) {
         if (this.init) {
           const timer = setTimeout(() => {
-            this.$emit('slideTo', this.index + 2)
+            this.$emit('slideTo', this.index + 3)
             this.init = false
             clearTimeout(timer)
           }, 1000)
         } else {
+          if (this.index === this.dateArr.length) {
+            this.closeCalendar()
+            return
+          }
           if (this.index == 1) {
-            console.log()
             const timer1 = setTimeout(() => {
               this.year = 2018
               this.showCountup = true
@@ -100,28 +100,20 @@ export default {
             }, 2000)
             const timer2 = setTimeout(() => {
               this.showContent()
-            }, (4000));
+              clearTimeout(timer2)
+            }, 4000);
           } else {
             this.getTargetDay()  
           }
         }
       } else {
-        console.log('calendarTe++')
         this.index ++
         this.calendarTextIndex ++
       }
     }
   },
   mounted () {
-    // console.log('mounted')
     this.showDescribe = true
-    // setTimeout(() => {
-    //   this.$emit('slideTo', 2)
-    // }, 3000)
-    // setTimeout(() => {
-    //   this.calendarTextStart()
-    // }, 1000)
-console.log(this.dateArr)
     if (this.month === this.dateArr[0][0]) {
       this.targetDay = this.dateArr[0][1]
     } else {
@@ -151,27 +143,27 @@ console.log(this.dateArr)
     },
     getTargetDay () {
       const lastMonth = this.dateArr[this.index - 1][0]
-      console.log(lastMonth, this.month, 'aaaaaaaaaaaaaaaaa')
       const isConnect = Math.abs(lastMonth - this.month) == 0 || (lastMonth == 12 && this.month == 1)
       if (this.dateArr.length <= this.index) {
         return
       }
       this.startValue = isConnect ? this.targetDay : 1
-      console.log(this.startValue, isConnect, this.targetDay)
       if (this.dateArr[this.index][0] === this.month) {
         this.targetDay = this.dateArr[this.index][1]
       } else {
         this.targetDay = 0
       }
-      console.log(this.startValue, this.targetDay)
     },
     showContent () {
-      this.$emit('slideTo', this.index + 2)
+      this.$emit('slideTo', this.index + 3)
       // this.index ++         // 到达日期，去展示内容 index++
       setTimeout(() => {
         this.startValue = this.targetDay
         // this.getTargetDay()
-      }, 1000)
+      }, 2500)
+    },
+    closeCalendar () {
+      this.showContent()
     }
   }
 }
@@ -188,6 +180,8 @@ console.log(this.dateArr)
   background-color #33334a
   flex-direction column
   flexC()
+  .close
+
   .describe
     width  rem(500)
     font-size rem(40)

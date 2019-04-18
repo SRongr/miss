@@ -1,6 +1,6 @@
 <template lang="pug">
   .C0307F-wrapper
-    img.bg(src="https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/miss11.jpeg")
+    img.bg(:src="src2")
     Photo.photo(:src="src")
     Article.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
     Arrow(:delay="2000", v-if='ani')
@@ -12,6 +12,7 @@ import Photo from '../../../common/components/Photo'
 import Article from '../../../common/components/Article'
 import Arrow from '../../../common/components/Arrow'
 import BackCalendar from '../../../common/components/BackCalendar'
+import images from '../images.json'
 export default {
   components: {
     Photo,
@@ -26,7 +27,8 @@ export default {
         // 女神节日快乐！
        '当当当当， 女神节快乐！！！ 这个盒子可是我自己做的哦。里面的结构可是用心想了的！放我准备的东西刚刚好！当时前几天还惹你生气了。嘿嘿。里面还有一封道歉信，右下角附上当时画的表情包原图，还祝福了我们的将来。'
       ],
-      src: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end24.png',
+      src: images.src1,
+      src2: images.src3,
       articleStyle: {
         fontSize: `${50/75}em`,
         fontWeight: '700',

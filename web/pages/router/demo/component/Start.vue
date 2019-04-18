@@ -1,29 +1,43 @@
 <template lang="pug">
   .wrapper(ref="wrapper")
-    .describe.infinite(ref="describe",v-if='showDescribe') {{calendarText[calendarTextIndex]}}
-    .start.one(@touchstart="touchstart",@touchend="touchend", ref="start") START
+    .describe.infinite(ref="describe",v-if='showDescribe && ani') {{calendarText[calendarTextIndex]}}
+    .start.one(@touchstart="touchstart",@touchend="touchend", ref="start", v-if='ani') START
+    //- audio(src="https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/%E9%99%88%E6%B7%91%E6%A1%A6%20-%20%E6%BB%9A%E6%BB%9A%E7%BA%A2%E5%B0%98.mp3", id="contentAudio")
 </template>
 
 <script>
 export default {
+  props: ['ani'],
   data() {
     return {
       showDescribe: false,
       calendarText: [
         '之前的我是个粗心的人,没能好好把握每一次接触的机会',
-        '直到失去了, 才发现有很多该珍惜的没有珍惜',
-        '现在, 我想捡起仅剩不多的记忆碎片',
+        '直到失去了, 才发现很多该做的没有做',
+        '这个项目，本是留到我们以后记录生活的点点滴滴',
+        '现在，它提前了',
+        '我想捡起仅剩不多的记忆碎片',
         '那么, 欢迎来到时光日历'
       ],
       calendarTextIndex: 0
     }
   },
-  mounted() {
-    this.showDescribe = true
+  watch: {
+    ani(boolean) {
+      if (boolean) {
+          this.showDescribe = true
     setTimeout(() => {
       this.calendarTextStart()
     }, 1000)
+      }
+    }
   },
+  // mounted() {
+  //   this.showDescribe = true
+  //   setTimeout(() => {
+  //     this.calendarTextStart()
+  //   }, 1000)
+  // },
   methods: {
     calendarTextStart () {
       const describe = this.$refs.describe
@@ -41,7 +55,12 @@ export default {
     },
     touchend () {
       this.$refs.start.style.color = 'green'
-      this.$emit('slideTo', 1, 0)
+      if (this.calendarTextIndex !== this.calendarText.length - 1 ){
+        return 
+      }
+      // const audio
+      // audio(:src="images.contentMp3", id="contentAudio")
+      this.$emit('slideTo', 2, 0)
       this.$refs.wrapper.className = 'wrapper out'
     }
   }
@@ -68,7 +87,7 @@ export default {
     &.infinite
       fadein(1.5s, 1s, alternate infinite)
     &.one
-      fadein(1.5s, 10s, forwards)
+      fadein(1.5s, 16s, forwards)
   .start
     opacity 0
     width rem(400)
@@ -78,5 +97,5 @@ export default {
     font-family Helvetica
     line-height rem(200)
     &.one
-      fadein(1.5s, 11.5s, forwards) // 这里不知道为啥，最后一次的延迟事件要从dom有的时候开始计算，而不是生成这个class的时候开始算 1+3+3+3 + 延迟1.5秒
+      fadein(1.5s, 17s, forwards) // 这里不知道为啥，最后一次的延迟事件要从dom有的时候开始计算，而不是生成这个class的时候开始算 1+3+3+3 + 延迟1.5秒
 </style>

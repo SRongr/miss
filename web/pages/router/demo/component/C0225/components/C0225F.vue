@@ -2,15 +2,19 @@
   .wrapper
     Photo.photo(:src="src")
     Article.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
+    Arrow(:delay="2000", v-if='ani')
 </template>
 
 <script>
 import Photo from '../../../common/components/Photo'
 import Article from '../../../common/components/Article'
 import BackCalendar from '../../../common/components/BackCalendar'
+import Arrow from '../../../common/components/Arrow'
+import images from '../images.json'
 export default {
   components: {
     Photo,
+    Arrow,
     Article,
     BackCalendar
   },
@@ -21,7 +25,7 @@ export default {
         //  终于踏上这条路了
        '听你说同意了我去洛阳了， 叔叔也同意了。我立马定了车票。嘿嘿。我想，等我去了洛阳，我们会有更多的机会互相了解，见面吧。那样，我们的感情就会快速发展！'
       ],
-      src: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/miss8.png',
+      src: images.src1,
       articleStyle: {
         fontSize: `${35/75}em`,
         fontWeight: '400'

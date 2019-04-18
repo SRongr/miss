@@ -7,27 +7,21 @@
 <script>
 import Article from '../../../common/components/Article'
 import Arrow from '../../../common/components/Arrow'
-import Photo from '../../../common/components/Photo'
 export default {
   components: {
     Article,
     Arrow,
-    Photo,
   },
   props: ['ani'],
   data() {
     return {
       calendarText: [
-        // 最后一天
        '我以为，在我们平时微信了解的过程中，我们已变的越来越好，所以没有一开始那么严肃，那么拘谨。事实相反，由于我的不认真的话语，你早已对我心生厌恶。你问我包里背的什么，我说没有给你的东西。一是你之前给我说的不会再收我的东西，二是我想等到里面的东西有作用的时候拿出来。'
       ],
       articleStyle: {
         fontSize: `${44/75}em`,
         fontWeight: '700',
-        // color: '#ff0087',
-        // fontFamily: 'cursive',
       },
-      src: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end26.jpeg'
     }
   },
   methods: {

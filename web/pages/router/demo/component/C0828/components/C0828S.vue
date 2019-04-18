@@ -1,6 +1,6 @@
 <template lang="pug">
   .wrapper(ref="wrapper")
-    Photo.photo1(:src="src1")
+    Photo.photo1(:src="src")
     //- Arrow(:delay="2000", v-if='ani')
     Article.article-wrapper(:calendar-text="calendarText", v-if='ani')
 </template>
@@ -9,6 +9,7 @@
 import Article from '../../../common/components/Article'
 import Arrow from '../../../common/components/Arrow'
 import Photo from '../../../common/components/Photo'
+import images from '../images.json'
 export default {
   props: {
     ani: {
@@ -26,7 +27,7 @@ export default {
       calendarText: [
         '这是我一个哥们, 他知道我一直喜欢你，以及我追你的事情。感情经历也比较丰富。 当时我就咨询了一下他， 然后他给我说了这句话。当时我还不是很在意。现在回想起来，这句话真的太重要了。 若是能早些领悟， 结局也不止于此',
       ],
-      src1: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end19.jpg',
+      src: images.src2,
     }
   },
   mounted() {

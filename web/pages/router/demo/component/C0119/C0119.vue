@@ -9,6 +9,7 @@
 import Photo from '../../common/components/Photo'
 import Article from '../../common/components/Article'
 import BackCalendar from '../../common/components/BackCalendar'
+import images from './images.json'
 export default {
   components: {
     Photo,
@@ -21,7 +22,7 @@ export default {
       calendarText: [
        '还记得这个包裹吗。他应该也是属于你最不需要的东西之一吧。里面是两个哈士奇。一大一小。 买之前我也问了你一下，你回答的比较模糊。。我就自作主张了。这两只狗可不好带啊。来回做了60站地铁呢。这里的娃娃店是元旦通宵的时候看上的。觉得不错。正好当时看你王者段位下降了(实际上是赛季刷新了。),感觉你会不高兴。。就像给你买个娃娃。哈士奇也是搞笑一族，想逗你开心。嘿嘿。不知道他俩还活没活着',
       ],
-      src: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/end22.jpeg',
+      src: images.src,
       articleStyle: {
         fontSize: `${32/75}em`,
         fontWeight: '400'

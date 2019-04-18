@@ -9,6 +9,7 @@
 import Article from '../../../common/components/Article'
 import Arrow from '../../../common/components/Arrow'
 import Photo from '../../../common/components/Photo'
+import images from '../images.json'
 export default {
   components: {
     Article,
@@ -20,14 +21,14 @@ export default {
     return {
       calendarText1: [
         // 最后一天
-       '不知道这样的偷拍你介不介意。女神的美。王荣铄记下了。照片都放在这上面了。手机已清空。若觉得不合适，可以告知于我，我会全部清空。跟你逛公园很开心。很开心能带你去你没去过的"海底世界"，不知道将来，你若再去海底世界，会不会记得曾经有个你十分讨厌，他十分爱你的傻小伙'
+       '不知道这样的给你拍照你介不介意。女神的美。王荣铄记下了。照片都放在这上面了。手机已清空。若觉得有所冒犯，可以告知于我，我会全部清空。跟你逛公园很开心。很开心能带你去你没去过的"海底世界"，不知道将来，你若再去海底世界，会不会记得曾经有个你十分讨厌，他十分爱你的傻小伙'
       ],
       articleStyle: {
         fontSize: `${38/75}em`,
         fontWeight: '700',
       },
-      src1: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/missu-1.jpeg',
-      src2: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/missu-2.jpeg'
+      src1: images.src4,
+      src2: images.src5,
     }
   },
   methods: {

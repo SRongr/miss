@@ -2,8 +2,6 @@
   .C0225-wrapper
     .photo-wrapper
       Photo.photo(:src="src1")
-    //- Photo.photo1(:src="src1")
-    //- Photo.photo2(:src="src2")
     Article.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
     //- BackCalendar(@backClick="backClick")
 </template>
@@ -12,6 +10,7 @@
 import Photo from '../../../common/components/Photo'
 import Article from '../../../common/components/Article'
 import BackCalendar from '../../../common/components/BackCalendar'
+import images from '../images.json'
 export default {
   components: {
     Photo,
@@ -25,7 +24,7 @@ export default {
         //  终于踏上这条路了
        '今天的彩蛋 boom~'
       ],
-      src1: 'https://wrs970808-image.oss-cn-beijing.aliyuncs.com/jcy/miss10.jpeg',
+      src1: images.src2,
       articleStyle: {
         fontSize: `${35/75}em`,
         fontWeight: '400'
