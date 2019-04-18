@@ -74,8 +74,8 @@ export default {
 				longSwipesRatio: 0.1, // 滑动起效比例
 				observer: true,
         observeParents: true,
-        // allowSlideNext: false,
-        // allowSlidePrev: false
+        allowSlideNext: false,
+        allowSlidePrev: false
       },
       sliderIndex: 0,
       contentPageMap: [
