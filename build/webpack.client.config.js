@@ -7,9 +7,6 @@ const config = merge(base, {
     entry: {
         app: `./web/pages/entry-client.js`
     },
-    output: {
-        filename: '[name].[chunkhash:8].js'
-    },
     plugins: [
         // strip dev-only code in Vue source
         new webpack.DefinePlugin({

@@ -1,6 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const postcssConfig = require('./postcss.config')
+const { VueLoaderPlugin } = require('vue-loader')
+const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   output: {
     path: path.resolve(__dirname, `../dist/`),
@@ -22,27 +25,30 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
+      // {
+      //   test: /\.js$/,
+      //   loader: 'babel-loader',
+      //   exclude: /node_modules/,
+      // },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
         loader: 'file-loader',
         options: {
           name: 'img/[name].[hash:8].[ext]'    //自动hash命名图片等资源，并修改路径。路径需要根据项目实际情况确定。语法参考：https://doc.webpack-china.org/loaders/file-loader/
         }
+      },
+      {
+        test: /\.js$/,
+        // exclude: /node_modules/,    // 排除就报错
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        },
       }
-      // {
-      //   test: /\.(png|jpg|jpeg|gif|svg)$/,
-      //   loader: 'url-loader',
-      //   options: {
-      //     limit: 10000,
-      //     name: 'img/[name].[hash].[ext]'
-      //   }
-      // },
-    ]
+    ],
+    
   },
   resolve: {
     alias: {
@@ -53,6 +59,23 @@ module.exports = {
   performance: {
     hints: false
   },
+  plugins: isProd ? [
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        compress: {
+          warnings: false,
+          drop_console: true, // 打包后去除console.log
+          collapse_vars: true, // 内嵌定义了但是只用到一次的变量
+          reduce_vars: true, // 提取出出现多次但是没有定义成变量去引用的静态值
+          pure_funcs: ['console.log']
+        }
+      },
+      sourceMap: false,
+      parallel: true // 使用多进程并行运行来提高构建速度
+    })
+  ] : [
+    new VueLoaderPlugin()
+  ],
   devtool: '#eval-source-map'
 };
 
