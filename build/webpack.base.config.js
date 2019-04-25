@@ -43,7 +43,12 @@ module.exports = {
             plugins:['syntax-dynamic-import'],
           }
         },
-      }
+      },
+      {
+        test: /\.pug$/,
+        loader: 'pug-html-loader',
+        exclude: /node_modules/ 
+      },
     ],
     
   },

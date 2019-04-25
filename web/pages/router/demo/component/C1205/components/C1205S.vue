@@ -1,12 +1,12 @@
 <template lang="pug">
   .wrapper(ref="wrapper")
     img.bg(:src="src")
-    Article.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
+    Essay.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
     Arrow(:delay="2000", v-if='ani')
 </template>
 
 <script>
-import Article from '../../../common/components/Article'
+import Essay from '../../../common/components/Essay'
 import Arrow from '../../../common/components/Arrow'
 import images from '../images.json'
 export default {
@@ -17,7 +17,7 @@ export default {
     },
   },
   components: {
-    Article,
+    Essay,
     Arrow
   },
   data() {

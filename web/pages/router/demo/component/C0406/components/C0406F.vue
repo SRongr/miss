@@ -1,15 +1,15 @@
 <template lang="pug">
   .C0406F-wrapper
-    Article.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
+    Essay.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
     Arrow(:delay="2000", v-if='ani')
 </template>
 
 <script>
-import Article from '../../../common/components/Article'
+import Essay from '../../../common/components/Essay'
 import Arrow from '../../../common/components/Arrow'
 export default {
   components: {
-    Article,
+    Essay,
     Arrow,
   },
   props: ['ani'],

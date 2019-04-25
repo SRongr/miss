@@ -2,17 +2,17 @@
   .C0407TI-wrapper
     Photo.photo1(:src="src")
     //- Photo.photo2(:src="src2")
-    //- Article.article-wrapper(:calendar-text="calendarText1", v-if='ani', :article-style="articleStyle")
+    //- Essay.article-wrapper(:calendar-text="calendarText1", v-if='ani', :article-style="articleStyle")
 </template>
 
 <script>
-import Article from '../../../common/components/Article'
+import Essay from '../../../common/components/Essay'
 import Arrow from '../../../common/components/Arrow'
 import Photo from '../../../common/components/Photo'
 import images from '../images.json'
 export default {
   components: {
-    Article,
+    Essay,
     Arrow,
     Photo,
   },

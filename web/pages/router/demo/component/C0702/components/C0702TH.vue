@@ -1,11 +1,11 @@
 <template lang="pug">
   .wrapper(ref="wrapper")
     .bg
-    Article(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
+    Essay(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
 </template>
 
 <script>
-import Article from '../../../common/components/Article'
+import Essay from '../../../common/components/Essay'
 import Arrow from '../../../common/components/Arrow'
 import Photo from '../../../common/components/Photo'
 export default {
@@ -16,7 +16,7 @@ export default {
     },
   },
   components: {
-    Article,
+    Essay,
     Arrow,
     Photo
   },

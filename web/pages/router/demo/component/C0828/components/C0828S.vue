@@ -2,11 +2,11 @@
   .wrapper(ref="wrapper")
     Photo.photo1(:src="src")
     //- Arrow(:delay="2000", v-if='ani')
-    Article.article-wrapper(:calendar-text="calendarText", v-if='ani',:article-style="articleStyle")
+    Essay.article-wrapper(:calendar-text="calendarText", v-if='ani',:article-style="articleStyle")
 </template>
 
 <script>
-import Article from '../../../common/components/Article'
+import Essay from '../../../common/components/Essay'
 import Arrow from '../../../common/components/Arrow'
 import Photo from '../../../common/components/Photo'
 import images from '../images.json'
@@ -18,7 +18,7 @@ export default {
     },
   },
   components: {
-    Article,
+    Essay,
     Arrow,
     Photo
   },

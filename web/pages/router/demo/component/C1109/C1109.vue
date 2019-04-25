@@ -1,16 +1,16 @@
 <template lang="pug">
   .C1109-wrapper
-    Article(:calendar-text="calendarText" :article-style="articleStyle")
+    Essay(:calendar-text="calendarText" :article-style="articleStyle")
     BackCalendar(@backClick="backClick")
 </template>
 
 <script>
 
-import Article from '../../common/components/Article'
+import Essay from '../../common/components/Essay'
 import BackCalendar from '../../common/components/BackCalendar'
 export default {
   components: {
-    Article,
+    Essay,
     BackCalendar
   },
   data() {

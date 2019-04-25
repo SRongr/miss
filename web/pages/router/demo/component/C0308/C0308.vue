@@ -1,16 +1,16 @@
 <template lang="pug">
   .wrapper
-    Article.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
+    Essay.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
     BackCalendar(@backClick="backClick")
 </template>
 
 <script>
-import Article from '../../common/components/Article'
+import Essay from '../../common/components/Essay'
 import BackCalendar from '../../common/components/BackCalendar'
 import images from './images.json'
 export default {
   components: {
-    Article,
+    Essay,
     BackCalendar
   },
   props: ['ani'],

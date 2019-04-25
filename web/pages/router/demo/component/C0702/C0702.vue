@@ -9,17 +9,17 @@
 
 
 <script>
-import F from './components/F';
-import S from './components/S'
-import T from './components/T'
-import TH from './components/TH'
+import C0702F from './components/C0702F';
+import C0702S from './components/C0702S'
+import C0702T from './components/C0702T'
+import C0702TH from './components/C0702TH'
 import BackCalendar from '../../common/components/BackCalendar'
 export default {
   components: {
-    F,
-    S,
-    T,
-    TH,
+    C0702F,
+    C0702S,
+    C0702T,
+    C0702TH,
     BackCalendar
   },
   props: [
@@ -45,10 +45,10 @@ export default {
         observeParents: true,
       },
       contentPageMap: [
-        F,
-        S,
-        T,
-        TH
+        C0702F,
+        C0702S,
+        C0702T,
+        C0702TH
       ],
       sliderIndex: 0
     }

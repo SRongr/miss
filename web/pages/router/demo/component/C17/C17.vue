@@ -9,15 +9,15 @@
 
 
 <script>
-import F from './components/F'
-import S from './components/S'
-import T from './components/T'
+import C17F from './components/C17F'
+import C17S from './components/C17S'
+import C17T from './components/C17T'
 import BackCalendar from '../../common/components/BackCalendar'
 export default {
   components: {
-    F,
-    S,
-    T,
+    C17F,
+    C17S,
+    C17T,
     BackCalendar
   },
   props: [
@@ -43,9 +43,9 @@ export default {
         observeParents: true,
       },
       contentPageMap: [
-        F,
-        S,
-        T
+        C17F,
+        C17S,
+        C17T
       ],
       sliderIndex: 0
     }

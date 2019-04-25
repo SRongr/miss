@@ -1,12 +1,12 @@
 <template lang="pug">
   .wrapper(ref="wrapper")
     .bg
-    Article(:calendar-text="calendarText", v-if='ani')
+    Essay(:calendar-text="calendarText", v-if='ani')
     Arrow(:delay="2000", v-if='ani')
 </template>
 
 <script>
-import Article from '../../../common/components/Article'
+import Essay from '../../../common/components/Essay'
 import Arrow from '../../../common/components/Arrow'
 export default {
   props: {
@@ -16,7 +16,7 @@ export default {
     },
   },
   components: {
-    Article,
+    Essay,
     Arrow
   },
   data() {

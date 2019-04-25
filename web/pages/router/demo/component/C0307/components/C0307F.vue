@@ -2,21 +2,21 @@
   .C0307F-wrapper
     img.bg(:src="src2")
     Photo.photo(:src="src")
-    Article.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
+    Essay.article-wrapper(:calendar-text="calendarText", v-if='ani', :article-style="articleStyle")
     Arrow(:delay="2000", v-if='ani')
     //- BackCalendar(@backClick="backClick")
 </template>
 
 <script>
 import Photo from '../../../common/components/Photo'
-import Article from '../../../common/components/Article'
+import Essay from '../../../common/components/Essay'
 import Arrow from '../../../common/components/Arrow'
 import BackCalendar from '../../../common/components/BackCalendar'
 import images from '../images.json'
 export default {
   components: {
     Photo,
-    Article,
+    Essay,
     Arrow,
     BackCalendar
   },

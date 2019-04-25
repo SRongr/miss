@@ -1,14 +1,14 @@
 <template lang="pug">
   .wrapper(ref="wrapper")
-    Article.article-wrapper1(:calendar-text="calendarText1", v-if='ani', :article-style="articleStyle")
+    Essay.article-wrapper1(:calendar-text="calendarText1", v-if='ani', :article-style="articleStyle")
     Photo.photo1(:src="src1")
-    Article.article-wrapper2(:calendar-text="calendarText2", v-if='ani', :article-style="articleStyle")
+    Essay.article-wrapper2(:calendar-text="calendarText2", v-if='ani', :article-style="articleStyle")
     Photo.photo2(:src="src2")
-    Article.article-wrapper3(:calendar-text="calendarText3", v-if='ani', :article-style="articleStyle")
+    Essay.article-wrapper3(:calendar-text="calendarText3", v-if='ani', :article-style="articleStyle")
 </template>
 
 <script>
-import Article from '../../../common/components/Article'
+import Essay from '../../../common/components/Essay'
 import Arrow from '../../../common/components/Arrow'
 import Photo from '../../../common/components/Photo'
 export default {
@@ -19,7 +19,7 @@ export default {
     },
   },
   components: {
-    Article,
+    Essay,
     Arrow,
     Photo
   },

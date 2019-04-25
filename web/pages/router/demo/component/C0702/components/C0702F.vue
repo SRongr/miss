@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Article from '../../../common/components/Article'
+import Essay from '../../../common/components/Essay'
 import Arrow from '../../../common/components/Arrow'
 import Photo from '../../../common/components/Photo'
 import images from '../images.json'
@@ -21,7 +21,7 @@ export default {
     },
   },
   components: {
-    Article,
+    Essay,
     Arrow,
     Photo
   },

@@ -1,14 +1,14 @@
 <template lang="pug">
   .wrapper(ref="wrapper")
     .bg
-    Article(:calendar-text="calendarText", v-if='ani')
+    Essay(:calendar-text="calendarText", v-if='ani')
 </template>
 
 <script>
-import Article from '../../../common/components/Article'
+import Essay from '../../../common/components/Essay'
 export default {
   components: {
-    Article
+    Essay
   },
   props: {
     ani: {

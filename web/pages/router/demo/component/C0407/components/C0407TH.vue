@@ -1,19 +1,19 @@
 <template lang="pug">
   .C0407TH-wrapper
     Photo.photo(:src="src")
-    Article.article-wrapper(:calendar-text="calendarText1", v-if='ani', :article-style="articleStyle")
-    Article.article-wrapper2(:calendar-text="calendarText2", v-if='ani', :article-style="articleStyle2")
+    Essay.article-wrapper(:calendar-text="calendarText1", v-if='ani', :article-style="articleStyle")
+    Essay.article-wrapper2(:calendar-text="calendarText2", v-if='ani', :article-style="articleStyle2")
     Arrow(:delay="2000", v-if='ani')
 </template>
 
 <script>
-import Article from '../../../common/components/Article'
+import Essay from '../../../common/components/Essay'
 import Arrow from '../../../common/components/Arrow'
 import Photo from '../../../common/components/Photo'
 import images from '../images.json'
 export default {
   components: {
-    Article,
+    Essay,
     Arrow,
     Photo,
   },
