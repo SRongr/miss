@@ -1,6 +1,4 @@
 import homePage from './HomePage.vue'
-// import about from './component/about.vue'
-// import blog from './component/blog.vue'
 
 const route = [
   {

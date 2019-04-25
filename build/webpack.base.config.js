@@ -7,7 +7,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, `../dist/`),
     publicPath: '/dist/',       //发布后在线访问的url
-    filename: `[name].[hash:8].js`   //'[name].[chunkhash].js', '[name].[hash:8].js'
+    filename: `js/[name].[hash:8].js`,  //'[name].[chunkhash].js', '[name].[hash:8].js'
+    chunkFilename: 'js/[name].[chunkhash].js'
   },
   module: {
     rules: [
@@ -33,11 +34,12 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        // exclude: /node_modules/,    // 排除就报错
+        exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env']
+            presets: ['env'],
+            plugins:['syntax-dynamic-import'],
           }
         },
       }
