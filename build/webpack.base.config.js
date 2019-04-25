@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const postcssConfig = require('./postcss.config')
+const { VueLoaderPlugin } = require('vue-loader')
 const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   output: {
@@ -56,6 +57,7 @@ module.exports = {
     hints: false
   },
   plugins: isProd ? [
+    new VueLoaderPlugin(),
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: {
@@ -70,6 +72,7 @@ module.exports = {
       parallel: true // 使用多进程并行运行来提高构建速度
     })
   ] : [
+    new VueLoaderPlugin(),
   ],
   devtool: '#eval-source-map'
 };
